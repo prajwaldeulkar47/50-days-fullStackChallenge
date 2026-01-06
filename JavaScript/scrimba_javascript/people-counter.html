@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>People Counter</title>
+</head>
+
+<body style="background-color: rgb(5, 5, 113); margin:0;padding:0;">
+    <div
+        style="background-color:yellow; border:none;border-radius:15px; box-shadow: 0px 0px 20px yellow; width:300px;display:block;margin: auto; margin-top:100px; padding:20px;">
+        <h1 style="text-align:center; font-size:34px; ">People Counter</h1>
+        <h2 id='counter' ;
+            style="text-align:center; font-size:30px;background-color: white;box-shadow: 0 0 10px lightblue;border-radius:15px;width:90px;margin-left: auto;margin-right: auto;padding: 10px;">
+            0</h2>
+        <button onclick="
+        increment();
+        // document.getElementById('counter').innerText = ++count;
+        "
+            style="color:white;font-size:16px;background-color:red; border:none;border-radius:15px; box-shadow: 0px 0px 20px rgb(246, 2, 43); width:200px;display:block;margin: auto; margin-top:10px; padding:20px;">Add
+            Person</button>
+        <button onclick="
+        save()
+        " ;
+            style="color:white;font-size:16px;background-color:green; border:none;border-radius:15px; box-shadow: 0px 0px 20px rgb(2, 246, 43); width:200px;display:block;margin: auto; margin-top:10px; padding:20px;">Save</button>
+        <p id="save" ; style="text-align: center;color: rgb(0, 0, 0);"></p>
+    </div>
+    <script>
+        let count = 0;
+        let counter = document.getElementById('counter')
+        function increment() {
+            count++;
+            // document.getElementById('counter').innerText = count;
+            counter.textContent = count
+        }
+        let savedHistory = ''
+        function save() {
+            savedHistory += count + ' - '
+            document.getElementById('save').textContent = 'Previous enteries: ' + savedHistory
+            counter.textContent = 0
+            count = 0
+        }
+    </script>
+
+</html>

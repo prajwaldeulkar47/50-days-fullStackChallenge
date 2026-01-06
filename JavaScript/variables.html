@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables in javascript</title>
+</head>
+<body>
+    <h1>Variables in JavaScript</h1>
+    <p>In JavaScript, variables are used to store data values. You can declare a variable using the <code>var</code>, <code>let</code>, or <code>const</code> keywords.</p>
+
+    <h2>Declaring Variables</h2>
+    <pre><code>// Using var
+var name = "John";
+// Using let
+let age = 30;
+// Using const
+const country = "USA";
+</code></pre>
+    <h2>Variable Scope</h2>
+    <p>The scope of a variable determines where it can be accessed in the code. Variables declared with <code>var</code> have function scope, while those declared with <code>let</code> and <code>const</code> have block scope.</p>
+
+    <h2>Example</h2>
+    <pre><code>function example() {
+    if (true) {
+        var x = 10; // function scope
+        let y = 20; // block scope
+        const z = 30; // block scope
+    }
+    console.log(x); // 10
+    console.log(y); // ReferenceError: y is not defined
+    console.log(z); // ReferenceError: z is not defined
+}
+example();
+</code></pre>
+<script>
+    // // Example script to demonstrate variable declaration and scope
+    // function example() {
+    //     if (true) {
+    //         var x = 10; // function scope
+    //         let y = 20; // block scope
+    //         const z = 30; // block scope
+    //     }
+    //     console.log(x); // 10
+    //     try {
+    //         console.log(y); // ReferenceError: y is not defined
+    //     } catch (e) {
+    //         console.log(e.message);
+    //     }
+    //     try {
+    //         console.log(z); // ReferenceError: z is not defined
+    //     } catch (e) {
+    //         console.log(e.message);
+    //     }
+    // }
+    // example();
+    let name = "abcd";
+    console.log(name);
+    let age =  10 +20 ;
+    console.log(age);
+
+    name = "xyz";
+    console.log(name);
+    age = age +10;
+    console.log(age);
+    const country = "USA";
+    country = "Canada"; // This will throw an error because const variables cannot be reassigned
+    console.log(country);
+    // Using const for constant values
+    const pi = 3.14;
+    console.log(pi);
+    pi = 3.14159; // This will throw an error because const variables cannot be reassigned
+    console.log(pi);
+    // Demonstrating block scope with let and const
+    {
+        let blockVar = "I am inside a block";
+        const blockConst = "I am also inside a block";
+        console.log(blockVar);
+        console.log(blockConst);
+    }
+    // console.log(blockVar); // ReferenceError: blockVar is not defined
+    // console.log(blockConst); // ReferenceError: blockConst is not defined
+
+</script>
+</body>
+</html>

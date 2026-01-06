@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+    <div class="bg-gray-800 rounded-lg shadow-2xl p-6 w-80">
+        <h1 class="text-white text-2xl font-bold mb-4 text-center">Calculator</h1>
+        
+        <input type="text" id="display" readonly class="w-full bg-gray-700 text-white text-right text-3xl p-4 rounded mb-4 font-mono" placeholder="0">
+        
+        <div class="grid grid-cols-4 gap-2">
+            <button class="col-span-2 bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded">Clear</button>
+            <button class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded">/</button>
+            <button class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded">*</button>
+            
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 rounded">7</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 rounded">8</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 rounded">9</button>
+            <button class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded">-</button>
+            
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 rounded">4</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 rounded">5</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 rounded">6</button>
+            <button class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded">+</button>
+            
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 rounded">1</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 rounded">2</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 rounded">3</button>
+            <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded row-span-2">=</button>
+            
+            <button class="col-span-3 bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 rounded">0</button>
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('button');
+        let currentInput = '';
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.textContent;
+
+                if (value === 'Clear') {
+                    currentInput = '';
+                    display.value = '';
+                } else if (value === '=') {
+                    try {
+                        currentInput = eval(currentInput).toString();
+                        display.value = currentInput;
+                    } catch {
+                        display.value = 'Error';
+                        currentInput = '';
+                    }
+                } else {
+                    currentInput += value;
+                    display.value = currentInput;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple cart example</title>
+</head>
+<body>
+    <!--  This is a simple cart example demonstrating variable usage in JavaScript  -->
+    <button onclick="
+        console.log(`Cart Quantity : ${cartQuantity}`)
+        ">Show Quantity</button>
+    <button onclick="
+    cartQuantity++;
+    ">Add to Cart</button>
+    <button onclick="
+    cartQuantity += 2 ;
+    ">+2</button>
+    <button onclick="
+    cartQuantity += 3 ;
+    ">+3</button>
+    <button onclick="
+    cartQuantity = 0;
+    console.log('Cart reset');
+    ">Reset Cart</button>
+    
+
+    <script>
+        let cartQuantity = 0;
+        console.log(typeof cartQuantity);
+        const name = "Prajwal Deulkar";
+        console.log(typeof name);
+        console.log(`My name is ${name}`);
+    </script>
+</body>
+</html>

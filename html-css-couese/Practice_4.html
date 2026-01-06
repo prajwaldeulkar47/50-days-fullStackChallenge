@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Practice_4</title>
+    <style>
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            column-gap: 20px;
+        }
+        .card {
+            font-family: Arial;
+            margin-right: 15px;
+            width: 200px;
+
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
+
+        .name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 8px;
+            margin-bottom: 4px;
+        }
+
+        .count {
+
+            color: rgb(100, 100, 100);
+            margin-left: 8px;
+            margin-bottom: 12px;
+        }
+
+        .add-friend {
+            background-color: rgb(24, 119, 242);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin-left: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+   <div class="card-grid">
+     <div class="card">
+        <img class="profile-pic" src="thumbnails/cat-1.jpeg">
+        <p class="name">Oliver</p>
+        <p class="count">2 mutual friends</p>
+        <button class="add-friend">Add Friend</button>
+    </div>
+    <div class="card">
+        <img class="profile-pic" src="thumbnails/cat-2.webp">
+        <p class="name">Mimi</p>
+        <p class="count">3 mutual friends</p>
+        <button class="add-friend">Add Friend</button>
+    </div>
+    <div class="card">
+        <img class="profile-pic" src="thumbnails/cat-3.webp">
+        <p class="name">Rex</p>
+        <p class="count">4 mutual friends</p>
+        <button class="add-friend">Add Friend</button>
+    </div>
+   </div>
+</body>
+
+</html>
