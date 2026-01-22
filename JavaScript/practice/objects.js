@@ -1,12 +1,13 @@
 
 
-let course = {
-    title: "Learn CSS Grid for free",
-    lessos: 16,
-    creator: "Per Harald Borgen",
-    length: 63,
-    isFree: true,
-    tags: ["html", "css"]
-}
+let course = [
+    // title: "Learn CSS Grid for free",
+    // lessos: 16,
+    // creator: "Per Harald Borgen",
+    // length: 63,
+    // isFree: true,
+    // tags: ["html", "css"],
+    {url: "www.google.com"}
+]
 
-console.log(course["tags"])
+console.log(course[0].url)
