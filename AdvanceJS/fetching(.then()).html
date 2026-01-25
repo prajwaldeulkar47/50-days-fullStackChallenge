@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Dog Image</title>
+</head>
+<body style="
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+">
+
+    <!-- Card -->
+    <div id="img-container" style="
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        margin-bottom: 15px;
+    ">
+        <h2 style="margin-bottom: 15px;">Random Dog 🐕</h2>
+        <div id="dog-img"></div>
+    </div>
+
+    <!-- Button outside the card -->
+    <button onclick="loadDog()" style="
+        padding: 10px 18px;
+        font-size: 14px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #28a745;
+        color: white;
+    ">
+        Refresh Dog
+    </button>
+
+    <script>
+        function loadDog() {
+            fetch('https://dog.ceo/api/breeds/image/random')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('dog-img');
+                    container.innerHTML = '';
+
+                    const img = document.createElement('img');
+                    img.src = data.message;
+                    img.alt = 'random dog picture';
+                    img.style.width = '300px';
+                    img.style.borderRadius = '8px';
+
+                    container.appendChild(img);
+                });
+        }
+
+        // Load image on page load
+        loadDog();
+    </script>
+
+</body>
+</html>
