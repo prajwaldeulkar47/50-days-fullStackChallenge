@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f8;
+}
+
+#upload-container {
+    text-align: center;
+}
+
+#upload-container h2 {
+    margin-bottom: 16px;
+    color: #333;
+}
+
+#submit-imgs {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    background-color: #4f46e5;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#submit-imgs:hover {
+    background-color: #4338ca;
+}
+
+#img-container {
+    display: none;
+    gap: 16px;
+}
+
+#img-container img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
