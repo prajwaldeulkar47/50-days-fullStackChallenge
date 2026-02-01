@@ -1,2 +1,4 @@
 1769714108241: /about?sdsd : New request received
 1769714160288: /about?username=Prajwal : New request received
+1769845195217: GET / : New request received
+1769845229143: GET /about?username=Jojo : New request received
